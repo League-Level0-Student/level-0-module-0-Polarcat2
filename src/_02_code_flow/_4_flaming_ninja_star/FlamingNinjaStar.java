@@ -27,7 +27,7 @@ while (count <25) {
 chip.move(64);
 			   // TURN LEFT      Turn the robot 40 degrees to the LEFT. (Negative numbers will turn the robot counter-clockwise.)
 chip.turn(-40);		
-chip.setPenColor(Color.MAGENTA);
+chip.setPenColor(Color.CYAN);
 			   // DRAW FLAME     Move the robot the distance in the variable flameSize
 chip.move(flameSize);			
 				//               Turn the robot 170 degrees
@@ -50,6 +50,6 @@ chip.move(flameSize);
 		//        Run the program again. Check the second picture in the recipe.
 
 		// LOOP   When you have one arm looking right, change your loop to repeat 25 times and run the program.
-		
+	
 	}
 }
