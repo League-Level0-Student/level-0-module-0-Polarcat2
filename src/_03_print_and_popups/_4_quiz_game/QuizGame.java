@@ -8,7 +8,7 @@ public class QuizGame {
 		// Create a variable to hold the user's score. Set it equal to zero. 
 		int score=0;
 		// ASK A QUESTION AND CHECK THE ANSWER
-		String answer = JOptionPane.showInputDialog("how fast do cheetahs run?");
+		String answer = JOptionPane.showInputDialog("how fast mph do cheetahs run?");
 				// 2.  Ask the user a question 
 				
 				// 3.  Use an if statement to check if their answer is correct
@@ -17,7 +17,7 @@ public class QuizGame {
 				}
 				// 4.  if the user's answer was correct, add one to their score 
 				answer = JOptionPane.showInputDialog("What is my favorite animal?");
-				if(answer.equalsIgnoreCase("cats")) {
+				if(answer.equalsIgnoreCase("cat")) {
 					score=score+1;
 				}
 		// MAKE MORE QUESTIONS. Ask more questions by repeating the above 
@@ -25,6 +25,6 @@ public class QuizGame {
 		
 		
 		// After all the questions have been asked, tell the user their final score 
-		
+				JOptionPane.showMessageDialog(null,"congradulations! you scored " +score);	
 	}
 }
