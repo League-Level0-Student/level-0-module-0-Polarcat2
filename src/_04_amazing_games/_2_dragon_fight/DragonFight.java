@@ -32,39 +32,50 @@ int dragonhealth=100;
 		while (true) {
 
 			// THE PLAYER ATTACKS THE DRAGON
-
+			
 				// 3. Ask the player in a pop-up if they want to attack the dragon with a yell
 				// or a kick
-	
+			String answer = JOptionPane.showInputDialog("Do you want to attack the dragon with a punch or with a kick?");
 				// 4. If they typed in "yell":
-	
+			if(answer.equalsIgnoreCase("punch")) {
+playerAttack=ran.nextInt(20);				
+			}
 					  // -- Find a random number between 0 and 10 and store it in playerAttack. Use
 					  // ran.nextInt(10)
 			
 				// 5. If they typed in "kick":
-	
+			if(answer.equalsIgnoreCase("kick")) {
+			playerAttack=ran.nextInt(25);	
+			}
 					  // -- Find a random number between 0 and 25 and store it in playerAttack.
 		
 				// 6. Subtract the player attack value from the dragon's health
-
+dragonhealth-=playerAttack;
 			// THE DRAGON RETALIATES
-
+dragonAttack=ran.nextInt(35);
 				// 7. Find a random number between 0 and 35 and store it in dragonAttack
 	
 				// 8. Subtract the dragon attack value from the player's health
-
+playerhealth-=dragonAttack;
 			// ASSESS THE DAMAGE
-
+if (playerhealth<=0) {
+	playerLost();
+}
 				// 9. If the player's health is less than or equal to 0, the game is over,
 				//    call the playerLost() method
 	
 			
 				// 10. If the dragon's health is less than or equal to 0, the game is over,
 				//     call the dragonLost() method
-
+if (dragonhealth<=0) {
+	dragonLost();
+}
 			
 				// 11.  Pop up a message that tells us how much health the player and
 				// 		dragon have left.
+	
+JOptionPane.showMessageDialog(null,"Your health is "+playerhealth);	
+JOptionPane.showMessageDialog(null,"The dragons health is "+dragonhealth);	
 
 			
 			// (Bonus: Also display the amount of health that was lost by each in this
@@ -77,6 +88,7 @@ int dragonhealth=100;
 
 	static void playerLost() {
 		// 11. Tell the player that they have been defeated by the dragon and have no treasure
+		JOptionPane.showMessageDialog(null,"Game Over");	
 
 
 		System.exit(0);   //This code ends the program
@@ -84,6 +96,7 @@ int dragonhealth=100;
 
 	static void dragonLost() {
 		// 12. Tell the user that the dragon has been defeated and they get a ton of gold!
+		JOptionPane.showMessageDialog(null,"Congradulations! The dragon has lost and now you have 300 gold and 4 tokens!");	
 
 		System.exit(0);   //This code ends the program
 	}
